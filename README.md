@@ -1,7 +1,7 @@
 # stead-spark-data-exploration
 Spark based data exploration of the Stanford Earthquake Dataset (STEAD) for DSC 232 Group Project.
 
-##SDSC Expanse Enviroment Setup
+## SDSC Expanse Enviroment Setup
 - Account: TG-SEF260003
 - Partition: shared
 - Time limit: 120 minutes
@@ -12,7 +12,7 @@ Spark based data exploration of the Stanford Earthquake Dataset (STEAD) for DSC 
 - Module loaded: singularitypro
 - Working directory: home
 
-##SparkSession Configuration
+## SparkSession Configuration
 - Total cores = 8
 - Total memory = 18 GB
 - Driver memory reserved = 4 GB
