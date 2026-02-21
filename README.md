@@ -13,12 +13,22 @@ Spark based data exploration of the Stanford Earthquake Dataset (STEAD) for DSC 
 - Working directory: home
 
 ## SparkSession Configuration
-- Total cores = 8
+- Total cores (CPU) = 8
 - Total memory = 18 GB
+  We set aside some memory  for the Spark driver since it handles coordination, scheduling, and job management.
+
 - Driver memory reserved = 4 GB
+  
+This leaves 14 GB available memory for executors: 18 - 4 = **14GB**
 
 - Executor instances = 8 − 1 = **7**
 - Executor memory = (18 − 4) / 7 = 14 / 7 = **2 GB per executor**
+
+We left 1 core for the driver to avoid resource contention and keep scheduling smooth.
+Leaving 4GB to the driver gives it enough memory to manage tasks and metadata without running into memory issues.
+
+The remaining memory is evenly divided by the 7 executors so that Spark can load and process data in parralel.
+  
 
 from pyspark.sql import SparkSession
 
