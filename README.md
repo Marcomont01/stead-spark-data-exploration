@@ -5,8 +5,8 @@ Spark based data exploration of the Stanford Earthquake Dataset (STEAD) for DSC 
 - Account: TG-SEF260003
 - Partition: shared
 - Time limit: 120 minutes
-- Number of cores: 8
-- Memory per node: 18 GB
+- Number of cores: 16
+- Memory per node: 150 GB
 - GPUs: 0
 - Container image: ~/esolares/spark_py_latest_jupyter_dsc232r.sif
 - Module loaded: singularitypro
