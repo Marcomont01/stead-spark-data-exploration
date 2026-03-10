@@ -40,7 +40,7 @@ The remaining memory is evenly divided by the 7 executors so that Spark can load
   
 
 from pyspark.sql import SparkSession
-
+```
 spark = (
     SparkSession.builder
     .appName("STEAD Spark Exploration")
@@ -49,3 +49,6 @@ spark = (
     .config("spark.driver.memory", "4g")
     .getOrCreate()
 )
+```
+## Model selection
+With the Spark session ready, we move on to training a model. Since our problem is a categorical one, we decided to use Spark’s Random Forest model (```pyspark.ml.classification.RandomForestClassifier```).
