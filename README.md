@@ -27,21 +27,20 @@ The data exploration notebook will be located in the `notebooks/` directory.
 - Working directory: home
 
 ##### SparkSession Configuration
-- Total cores (CPU) = 8
-- Total memory = 18 GB
+- Total cores (CPU) = 16
+- Total memory = 150 GB
   We set aside some memory  for the Spark driver since it handles coordination, scheduling, and job management.
 
-- Driver memory reserved = 4 GB
+- Driver memory reserved = 2 GB
   
 This leaves 14 GB available memory for executors: 18 - 4 = **14GB**
 
-- Executor instances = 8 − 1 = **7**
-- Executor memory = (18 − 4) / 7 = 14 / 7 = **2 GB per executor**
+- Executor instances = 16 − 1 = **15**
+- Executor memory = (150 − 2) / 15 = 148 / 15 = **9 GB per executor**
 
 We left 1 core for the driver to avoid resource contention and keep scheduling smooth.
-Leaving 4GB to the driver gives it enough memory to manage tasks and metadata without running into memory issues.
 
-The remaining memory is evenly divided by the 7 executors so that Spark can load and process data in parralel.
+The remaining memory is evenly divided by the 15 executors so that Spark can load and process data in parralel.
   
 
 from pyspark.sql import SparkSession
@@ -49,9 +48,9 @@ from pyspark.sql import SparkSession
 spark = (
     SparkSession.builder
     .appName("STEAD Spark Exploration")
-    .config("spark.executor.instances", "7")
-    .config("spark.executor.memory", "2g")
-    .config("spark.driver.memory", "4g")
+    .config("spark.executor.instances", "15")
+    .config("spark.executor.memory", "9g")
+    .config("spark.driver.memory", "2g")
     .getOrCreate()
 )
 ```
