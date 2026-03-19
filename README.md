@@ -59,7 +59,7 @@ spark = (
 
 # Methods
 
-Our notebook is linked here: [Code](stead-spark-data-exploration/Notebook.ipynb)
+Our notebook is linked here: [Code](Notebook.ipynb)
 
 ## Data Exploration
 
